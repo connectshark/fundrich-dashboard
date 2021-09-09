@@ -1,0 +1,1 @@
+import{g as t,o as s}from"./vendor.c4f07d11.js";const e={setup:()=>({})},r={class:"text-gray-800 text-2xl font-sans"};e.render=function(e,n,o,a,f,c){return s(),t("h2",r,"第一頁由此開始")};export{e as default};
