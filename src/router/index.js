@@ -14,8 +14,8 @@ const router = createRouter({
       component: () => import('../views/home.vue')
     },
     {
-      path: '/board',
-      name: 'board',
+      path: '/dashboard',
+      name: 'dashboard',
       beforeEnter: (to, from, next) => {
         const token = computed(() => store.state.token)
         if (!token.value) {
@@ -24,7 +24,25 @@ const router = createRouter({
           next()
         }
       },
-      component: () => import('../views/board.vue')
+      component: () => import('../views/dashboard.vue'),
+      children: [
+        {
+          path: 'detail',
+          name: 'detail',
+          component: () => import('../views/detail.vue')
+        },
+        {
+          path: 'chart',
+          name: 'chart',
+          component: () => import('../views/chart.vue')
+        },
+        {
+          path: ':pathMatch(.*)*',
+          redirect: {
+            name: 'detail'
+          }
+        }
+      ]
     },
     {
       path: '/login',

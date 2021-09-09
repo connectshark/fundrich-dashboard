@@ -1,7 +1,7 @@
 # fundrich-dashboard
 
 快速開發模板架構
-
+## 專案尚未開發完成
 ## 專案已安裝內容
 
 - vue3

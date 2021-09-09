@@ -1,5 +1,5 @@
 <template>
-  <div class="bg-yellow-100 pt-10 h-screen">
+  <div class="pt-10">
     <div class=" w-5/6 mx-auto bg-white rounded-xl p-3 max-w-screen-md">
       <h2 class="mb-4 text-gray-700 text-2xl">基富通登入</h2>
       <div class="mb-4 w-7/12 mx-auto">
@@ -8,7 +8,7 @@
       <div class="mb-4 w-7/12 mx-auto">
         <input type="password" v-model="pw" placeholder="登入密碼" class="placeholder-opacity-80 border-2 border-yellow-300 w-full text-base p-1 rounded-xl focus:shadow transition focus:outline-none focus:ring focus:border-blue-300">
       </div>
-      <input type="button" value="登入" @click="login" class="text-white bg-blue-600 w-40 p-3 rounded-xl mx-auto cursor-pointer hover:bg-blue-400 transition">
+      <input type="button" value="登入" @click="login" class="text-white bg-blue-600 w-40 p-2 rounded-xl mx-auto cursor-pointer hover:bg-blue-400 transition">
     </div>
   </div>
   
@@ -26,10 +26,11 @@ export default {
     const id = ref('')
     const pw = ref('')
     const login = () => {
+      if (id.value === '' || pw.value === '') return
       api.login(id.value, pw.value)
         .then(res => {
           store.commit('setUserInfo', res)
-          router.push('/board')
+          router.push('/dashboard')
         })
     }
     
