@@ -2,10 +2,14 @@ import { createStore } from 'vuex'
 
 const store = createStore({
   state: {
+    token: '',
+    BFNo: ''
   },
   mutations: {
-  },
-  actions: {
+    setUserInfo: (state, payload) => {
+      state.token = payload.Token
+      state.BFNo = payload.BFNo
+    }
   }
 })
 
