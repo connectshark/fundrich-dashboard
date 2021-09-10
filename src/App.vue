@@ -3,10 +3,11 @@
 </template>
 
 <script>
+import { useStore } from 'vuex'
 export default {
   setup () {
-    return {
-    }
+    const store = useStore()
+    store.dispatch('init')
   }
 }
 </script>

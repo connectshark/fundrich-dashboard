@@ -25,7 +25,7 @@ const api = {
     return new Promise((resolve, reject) => {
       axios({
         method: 'POST',
-        baseURL: import.meta.env.VITE_LOGIN_URL,
+        baseURL: import.meta.env.VITE_FUNDRICH_URL,
         url: '/ECGWToApi2/api2/GetTradeInfo',
         data: {
           BF_NO: BFNo,

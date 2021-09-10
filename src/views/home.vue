@@ -8,7 +8,8 @@
     <p class=" text-gray-700 text-2xl">本站不會儲存您的帳號密碼</p>
   </div>
   <div>
-    <router-link to="/login" class=" text-blue-400">前往登入</router-link>
+    <router-link to="/dashboard" class=" text-blue-400">面板</router-link>
+    <router-link to="/login" class=" text-blue-400">登入</router-link>
   </div>
 </div>
 </template>

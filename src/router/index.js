@@ -24,25 +24,7 @@ const router = createRouter({
           next()
         }
       },
-      component: () => import('../views/dashboard.vue'),
-      children: [
-        {
-          path: 'detail',
-          name: 'detail',
-          component: () => import('../views/detail.vue')
-        },
-        {
-          path: 'chart',
-          name: 'chart',
-          component: () => import('../views/chart.vue')
-        },
-        {
-          path: ':pathMatch(.*)*',
-          redirect: {
-            name: 'detail'
-          }
-        }
-      ]
+      component: () => import('../views/dashboard.vue')
     },
     {
       path: '/login',

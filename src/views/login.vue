@@ -8,7 +8,10 @@
       <div class="mb-4 w-7/12 mx-auto">
         <input type="password" v-model="pw" placeholder="登入密碼" class="placeholder-opacity-80 border-2 border-yellow-300 w-full text-base p-1 rounded-xl focus:shadow transition focus:outline-none focus:ring focus:border-blue-300">
       </div>
-      <input type="button" value="登入" @click="login" class="text-white bg-blue-600 w-40 p-2 rounded-xl mx-auto cursor-pointer hover:bg-blue-400 transition">
+      <div @click="login" class="text-white bg-blue-600 w-40 p-2 rounded-xl mx-auto cursor-pointer hover:bg-blue-400 transition">
+        <p v-if="loading"><i class='bx bx-loader bx-spin' ></i></p>
+        <p v-else>登入</p>
+      </div>
     </div>
   </div>
   
@@ -25,19 +28,26 @@ export default {
     const router = useRouter()
     const id = ref('')
     const pw = ref('')
+    const loading = ref(false)
     const login = () => {
-      if (id.value === '' || pw.value === '') return
+      if (id.value === '' || pw.value === '' || loading.value) return
+      loading.value = true
       api.login(id.value, pw.value)
         .then(res => {
           store.commit('setUserInfo', res)
           router.push('/dashboard')
+          loading.value = false
+        })
+        .catch(err => {
+          loading.value = false
         })
     }
     
     return {
       id,
       pw,
-      login
+      login,
+      loading
     }
   }
 }
