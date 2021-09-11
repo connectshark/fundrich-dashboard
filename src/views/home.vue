@@ -1,15 +1,8 @@
 <template>
 <div>
-  <nav class=" bg-gray-800 text-white py-5">
-    <h1 class="text-3xl">{{title}}</h1>
-  </nav>
-  <div class="py-3 font-sans">
+  <div class="py-3">
     <p class=" text-gray-700 text-2xl">本網站僅供查詢不提供盈利用途</p>
     <p class=" text-gray-700 text-2xl">本站不會儲存您的帳號密碼</p>
-  </div>
-  <div>
-    <router-link to="/dashboard" class=" text-blue-400">面板</router-link>
-    <router-link to="/login" class=" text-blue-400">登入</router-link>
   </div>
 </div>
 </template>

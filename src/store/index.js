@@ -8,6 +8,12 @@ const store = createStore({
     fundList: [],
   },
   mutations: {
+    clearUserInfo: (state) => {
+      state.token = ''
+      state.BFNo = ''
+      LS.remove('payload')
+    },
+
     setUserInfo: (state, payload) => {
       state.token = payload.Token
       state.BFNo = payload.BFNo
@@ -36,7 +42,7 @@ const store = createStore({
           day: item.NAV_DATE,
           total: item.TWD_BAL_COST,
           amt: item.GL_AMT,
-          value: item.MARKET_VALUE,
+          value: item.RSP_MARKET_VALUE,
           gain_all: item.ROI_RATE_DIV,
           gain: item.ROI_RATE
         }

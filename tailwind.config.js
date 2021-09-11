@@ -4,7 +4,7 @@ module.exports = {
   theme: {
     extend: {
       fontFamily: {
-        open: ['openhuninn', 'Noto Sans TC', 'sans-serif']
+        open: ['Roboto Mono', 'monospace','openhuninn', 'Noto Sans TC', 'sans-serif']
       }
     }
   },
