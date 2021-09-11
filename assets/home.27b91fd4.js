@@ -1,0 +1,1 @@
+import{a as t,o as e,b as s}from"./vendor.c2540ece.js";const a={setup:()=>({title:"基富通查詢後台"})},r=[s("div",{class:"py-3"},[s("p",{class:" text-gray-700 text-2xl"},"本網站僅供查詢不提供盈利用途"),s("p",{class:" text-gray-700 text-2xl"},"本站不會儲存您的帳號密碼")],-1)];a.render=function(s,a,l,c,n,o){return e(),t("div",null,r)};export{a as default};
